@@ -13,7 +13,6 @@ import android.provider.AlarmClock;
 import android.provider.CalendarContract;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
-import android.support.annotation.RequiresApi;
 import android.text.TextUtils;
 import android.widget.Toast;
 
@@ -200,21 +199,20 @@ public class IntentUtils {
     }
 
 
-    /**
-     * 添加日历事件
-     */
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public void addEvent(String title, String location, Calendar begin, Calendar end) {
-        Intent intent = new Intent(Intent.ACTION_INSERT)
-                .setData(CalendarContract.Events.CONTENT_URI)
-                .putExtra(CalendarContract.Events.TITLE, title)
-                .putExtra(CalendarContract.Events.EVENT_LOCATION, location)
-                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, begin)
-                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, end);
-        if (intent.resolveActivity(mActivity.getPackageManager()) != null) {
-            mActivity.startActivity(intent);
-        }
-    }
+//    /**
+//     * 添加日历事件
+//     */
+//    public void addEvent(String title, String location, Calendar begin, Calendar end) {
+//        Intent intent = new Intent(Intent.ACTION_INSERT)
+//                .setData(CalendarContract.Events.CONTENT_URI)
+//                .putExtra(CalendarContract.Events.TITLE, title)
+//                .putExtra(CalendarContract.Events.EVENT_LOCATION, location)
+//                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, begin)
+//                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, end);
+//        if (intent.resolveActivity(mActivity.getPackageManager()) != null) {
+//            mActivity.startActivity(intent);
+//        }
+//    }
 
     /**
      * 播放媒体文件
