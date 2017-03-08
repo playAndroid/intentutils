@@ -15,12 +15,13 @@ Android use Intent start system App's Utils.
 	}
 
    dependencies {
-	        compile 'com.github.playAndroid:intentutils:v1.0'
+	       compile 'com.github.playAndroid:intentutils:v1.1.1'
 	}
 ```
 
 ```
-为防止内存泄漏,工具类中不保存Activity引用,所以直接使用 IntentUtils utils = new IntentUtils(activity) 即可
+使用如下:
+IntentUtils.callPhone(activity,"13845612345");
 
 
 ```
